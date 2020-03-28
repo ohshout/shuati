@@ -44,9 +44,9 @@ public:
             } else {
                 TreeNode * par = m[p_id].second;
                 if (par->left == cur) {
-                    par->left == nullptr;
+                    par->left = nullptr;
                 } else {
-                    par->right == nullptr;
+                    par->right = nullptr;
                 }
             }
             
