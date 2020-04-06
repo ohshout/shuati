@@ -18,10 +18,10 @@ public:
     {
         trieNode * tmp = node;
         for (char c : word) {
-            if (tmp->children_[c-'0'] == nullptr) {
-                tmp->children_[c-'0'] = new trieNode();
+            if (tmp->children_[c-'a'] == nullptr) {
+                tmp->children_[c-'a'] = new trieNode();
             }
-            tmp = tmp->children_[c-'0'];
+            tmp = tmp->children_[c-'a'];
         }
         
         tmp->idx_ = idx;
@@ -36,8 +36,8 @@ public:
         while(i < word.size()) {
             char c = word.at(i);
             
-            if (tmp->children_[c-'0'] != nullptr) {
-                tmp = tmp->children_[c-'0'];
+            if (tmp->children_[c-'a'] != nullptr) {
+                tmp = tmp->children_[c-'a'];
             } else {
                 // start checking i - end
                 int l = i, r = word.size()-1;
