@@ -46,21 +46,21 @@ public:
     
     int next() {
 				while(1) {
-					Iterator & topS = start.top();
+					Iterator topS = start.top();
 					Iterator & topE = end.top();
 
-					NestedInteger ni = *topS;
-					topS++;
+					//topS++;
+					start.top()++;
 
-					if (topS == topE) {
+					if (start.top() == topE) {
 						start.pop();
 						end.pop();
 					}
 
-					if (ni.isInteger()) {
-						return ni.getInteger();
+					if (topS->isInteger()) {
+						return topS->getInteger();
 					} else {
-            auto new_ni = ni.getList();
+            auto new_ni = topS->getList();
 						start.push(new_ni.begin());
 						end.push(new_ni.end());
 					}
